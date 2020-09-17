@@ -1,0 +1,33 @@
+Relationships 
+
+Category has many posts 
+    post belongs to a comment 
+
+posts has many comments 
+    -comment belongs to a post
+
+
+Category:
+[x]Name-string
+
+Post 
+[x] Title
+[x] Image_url
+[x] Description
+[x] Size
+[x] Price
+[x] Likes
+[x] Availability
+[x] Category_Id
+
+
+Comments 
+[x]username
+[x]comment_text
+[x]post_id
+
+
+
+ 
+
+Stretch Goals: Build Users eventually 
