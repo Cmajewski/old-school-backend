@@ -1,7 +1,7 @@
-class API::V1::CategoriesController < ApplicationController
+class Api::V1::CategoriesController < ApplicationController
 
     def index 
-        @categories=Categories.all
+        @categories=Category.all
         render json: @categories
     end
 
@@ -10,19 +10,19 @@ class API::V1::CategoriesController < ApplicationController
         if @category.save
             render json: @category
         else
-            render json: {error: "Error creatign category"}
+            render json: {error: "Error creating category"}
         end
     end
 
     def show 
-        @category=Categories.find(params[:id])
+        @category=Category.find(params[:id])
         render json: @category
 
     end
 
     def destroy
-        @category=Categories.find(params[:id])
-         @category.destroy
+        @category=Category.find(params[:id])
+        @category.destroy
     end
 
     private
