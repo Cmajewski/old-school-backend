@@ -3,10 +3,10 @@ Rails.application.routes.draw do
     namespace :v1 do 
 
       resources :categories do 
-        resources :posts 
+        resources :posts
       end 
 
-      resources :posts,only: [:show] do
+      resources :posts,only: [:create,:show,:index] do
         resources :comments
       end
       

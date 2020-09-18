@@ -3,8 +3,8 @@ class Api::V1::PostsController < ApplicationController
     before_action :set_category,only: [:create, :index]
 
     def index 
-
         @posts=@category.posts  
+        render json: @posts
     end
 
     def create
@@ -18,11 +18,11 @@ class Api::V1::PostsController < ApplicationController
 
     def show 
         if @category=Category.find(params[:category_id])
-            @category_post=@category.posts.find(params[:id])
-            render json: @category_post
+            @post=@category.posts.find(params[:id])
+            render json:@post
         else
-        @post=Post.find(params[:id])
-        render json: @post
+            @post=Post.find(params[:id])
+            render json: @post
         end
     end
 
