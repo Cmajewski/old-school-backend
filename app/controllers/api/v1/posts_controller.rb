@@ -1,8 +1,9 @@
 class Api::V1::PostsController < ApplicationController
 
-    before_action :set_category
+    before_action :set_category,only: [:create, :index]
 
     def index 
+
         @posts=@category.posts  
     end
 
@@ -16,8 +17,13 @@ class Api::V1::PostsController < ApplicationController
     end
 
     def show 
+        if @category=Category.find(params[:category_id])
+            @category_post=@category.posts.find(params[:id])
+            render json: @category_post
+        else
         @post=Post.find(params[:id])
         render json: @post
+        end
     end
 
     def destroy 

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
         resources :posts 
       end 
 
-      resources :posts,only: [:create,:show] do
+      resources :posts,only: [:show] do
         resources :comments
       end
       
