@@ -1,4 +1,4 @@
-category=Category.create(name:"College")
+category=Category.create(name:"Schools")
 category=Category.create(name:"Bands")
 category=Category.create(name:"Cities")
 category=Category.create(name:"Tees")
