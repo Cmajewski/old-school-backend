@@ -21,12 +21,13 @@ class Api::V1::PostsController < ApplicationController
     end
 
     def show 
-        if 
-            @post=@category.posts.find(params[:id])
-            render json:@post
+        if params[:category_id]
+        category=Category.find(params[:category_id])
+        post=category.posts.find(params[:id])
+        render json:post
         else
-            @post=Post.find(params[:id])
-            render json: @post
+            post=Post.find(params[:id])
+            render json:post
         end
     end
 
