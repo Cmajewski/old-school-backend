@@ -1,11 +1,14 @@
 class Api::V1::PostsController < ApplicationController
 
-    before_action :set_category,only: [:create]
 
     def index 
-        # @posts=@category.posts  
-        posts=Post.all
-        render json: posts
+        if params[:category_id]
+            @posts=Category.find(params[:category_id]).posts
+            render json: @posts
+        else  
+            @posts=Post.all
+            render json: @posts
+        end
     end
 
     def create
@@ -18,7 +21,7 @@ class Api::V1::PostsController < ApplicationController
     end
 
     def show 
-        if @category=Category.find(params[:category_id])
+        if 
             @post=@category.posts.find(params[:id])
             render json:@post
         else
@@ -33,10 +36,6 @@ class Api::V1::PostsController < ApplicationController
     end
 
     private
-
-    def set_category
-        @category=Category.find(params[:category_id])
-    end
 
     def post_params
         params.require(:post).permit!
