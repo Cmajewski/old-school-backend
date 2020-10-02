@@ -39,7 +39,6 @@ class Api::V1::PostsController < ApplicationController
     end
 
     def post_params
-        binding.pry
         params.require(:post).permit!
     end 
 
