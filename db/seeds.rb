@@ -1,8 +1,8 @@
 category=Category.create(name:"Schools")
 category=Category.create(name:"Bands")
 category=Category.create(name:"Cities")
-category=Category.create(name:"Tees")
-category=Category.create(name:"Sweatshirt")
+category=Category.create(name:"Graphic Tees")
+category=Category.create(name:"Sweatshirts")
 
 post=Post.create(title:"Vintage Wesleyan Sweatshirt", image_url:"https://di2ponv0v5otw.cloudfront.net/posts/2019/12/20/5dfd257f21696884d74e9704/m_5dfd25db2eb33f370b6f1d26.jpg",
 description: "Lightly used, vintage 90's Wes crewneck with faded color.",size:"L",price: 35,likes:0,availability: "For Sale",category_id:1)
